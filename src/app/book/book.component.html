@@ -1,0 +1,29 @@
+<form class="card m-3">
+    <input  [formControl]="nombre"
+            class="p-2 mb-2" placeholder="nombre"/>
+
+    <input  [formControl]="edicion"
+            class="p-2 mb-2" placeholder="edicion"/>
+
+    <button (click)="addBook()" class="btn btn-success">
+          Aceptar
+    </button>
+</form>
+
+<ul class="list-group m-3">
+    <li class="list-group-item" *ngFor="let book of books">
+        <p >{{book.id}}</p>
+        <p>{{book.nombre}}</p>
+        <p>{{book.edicion}}</p>
+        <div class="d-flex flex-md-row-reverse"></div>
+        <button (click)="deleteBook(book.id)"
+           class="btn btn-danger mr-2">
+            delete
+        </button>
+        <button (click)="getBook(book.id)"
+            class="btn btn-success">
+            update
+        </button>
+    </li>
+
+</ul>
